@@ -21,4 +21,24 @@ def get_num_chars(file_path):
             count[char] = 1
     return count
 
-print(get_num_chars(test))
+def get_org_dict(file_path):
+    dict = get_num_chars(file_path)
+    c_list = []
+    for char in dict:
+        num = dict[char]
+        result = {"char": char, "num": num}
+        c_list.append(result)
+    return c_list
+
+def sort_on(chars):
+    return chars["num"]
+
+def sort_list(file_path):
+    chars = get_org_dict(file_path)
+
+    chars.sort(reverse=True, key=sort_on)
+    print(chars)
+
+print(get_org_dict(test))
+
+# result = {f"char:{char}, num: {num}"}
