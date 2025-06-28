@@ -7,8 +7,7 @@ def get_num_words(file_path):
     counter = 0
     for word in words:
         counter += 1
-    return f"{counter} words found in the document"
-
+    return counter
 
 
 def get_num_chars(file_path):
@@ -43,9 +42,5 @@ def sort_on(chars):
 def sort_list(file_path):
     chars = get_org_dict(file_path)
     chars.sort(reverse=True, key=sort_on)
-    for group in chars:
-        result = print(group)
-    return result
-
-print(sort_list(test))
+    return chars
 
